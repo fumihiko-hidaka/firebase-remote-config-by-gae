@@ -17,7 +17,11 @@ class RemoteConfigPage(webapp2.RequestHandler):
 
         if set_value is not None:
             res = RemoteConfigRequest().put({
-                'test_value': set_value,
+                'test_value': {
+                    "defaultValue": {
+                        "value": set_value
+                    }
+                },
             })
 
         self.response.headers['Content-Type'] = 'application/json'
