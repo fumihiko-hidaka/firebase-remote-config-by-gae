@@ -33,5 +33,5 @@ class RemoteConfigPage(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/remote_config', RemoteConfigPage),
+    ('/firebase-remote-config', RemoteConfigPage),
 ])
