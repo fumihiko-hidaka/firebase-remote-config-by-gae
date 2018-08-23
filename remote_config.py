@@ -2,7 +2,7 @@ import json
 
 import requests
 from google.auth.app_engine import Credentials, get_project_id
-from google.auth.transport import requests as g_r
+from google.auth.transport import requests as google_request
 
 
 class RemoteConfigRequest:
@@ -12,7 +12,7 @@ class RemoteConfigRequest:
                 "https://www.googleapis.com/auth/firebase.remoteconfig"
             ]
         )
-        credentials.refresh(g_r.Request())
+        credentials.refresh(google_request.Request())
 
         self.request_url = "https://firebaseremoteconfig.googleapis.com/v1/projects/{}/remoteConfig".format(
             get_project_id()
